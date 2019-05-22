@@ -10,3 +10,13 @@ class BinanceApi:
 
     def get_24h_1h_candle(self, pair):
         return self.client.get_historical_klines(pair, Client.KLINE_INTERVAL_1HOUR, "1 day ago UTC")
+
+    def get_latest_price(self, pair):
+        ticker = self.client.get_ticker(symbol=pair)
+        return round(float(ticker['lastPrice']), 2)
+
+
+api = BinanceApi()
+first = "BTC"
+sec = "USDT"
+print(api.get_latest_price(first + sec))

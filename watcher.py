@@ -7,7 +7,7 @@ from strategies.strategy_one import StrategyOne
 
 class Watcher:
 
-    def __init__(self, main_currency, second_currency, minute_interval, binance_api, strategy_id):
+    def __init__(self, main_currency, second_currency, minute_interval, binance_api, strategy_id, production=False):
         self.main_currency = main_currency
         self.second_currency = second_currency
         self.minute_interval = minute_interval
@@ -15,16 +15,18 @@ class Watcher:
         self.strategy_id = strategy_id
         self.order_handler = OrderHandler(self.main_currency, self.second_currency, binance_api)
         self.strategy = StrategyOne(self.main_currency, self.second_currency)
+        self.production = production
 
     def start(self):
+        print(self.production)
         print("Starting watcher for:", self.main_currency, self.second_currency, datetime.datetime.now().replace(microsecond=0))
         while True:
             self.strategy.set_data()
             result = self.strategy.evaluate_criterias()
             if result > 0:
-                self.order_handler.buy()
+                self.order_handler.buy(self.production)
             elif result < 0:
-                self.order_handler.sell()
+                self.order_handler.sell(self.production)
             print("Points", result)
             print(datetime.datetime.now().replace(microsecond=0))
             time.sleep(self.minute_interval * 60)

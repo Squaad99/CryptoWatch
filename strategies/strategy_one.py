@@ -84,4 +84,4 @@ class StrategyOne:
         points.append(self.criteria_four())
         points.append(self.criteria_five())
         points.append(self.criteria_six())
-        return  sum(points)
+        return sum(points)
