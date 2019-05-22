@@ -14,9 +14,3 @@ class BinanceApi:
     def get_latest_price(self, pair):
         ticker = self.client.get_ticker(symbol=pair)
         return round(float(ticker['lastPrice']), 2)
-
-
-api = BinanceApi()
-first = "BTC"
-sec = "USDT"
-print(api.get_latest_price(first + sec))
