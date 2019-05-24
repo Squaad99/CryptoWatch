@@ -1,3 +1,5 @@
+import datetime
+
 import mysql.connector
 
 
@@ -12,8 +14,14 @@ class DatabaseConnector:
         self.cursor = self.database.cursor()
 
     def insert_order(self, strategy_id, order_type, main_currency, second_currency, price, date, prod=False):
-        sql = "INSERT INTO crypto_order (trade_strategy, production, order_type, main_currency, second_currency, price, date) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-        val = (strategy_id, prod, order_type, main_currency, second_currency, price, date)
+        sql = "INSERT INTO crypto_order (trade_strategy, run_id, production, order_type, main_currency, second_currency, price, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        val = (strategy_id, 1, prod, order_type, main_currency, second_currency, price, date)
+        self.cursor.execute(sql, val)
+        self.database.commit()
+
+    def insert_run(self, id, type):
+        sql = "INSERT INTO runs (id, type, date) VALUES (%s, %s, %s)"
+        val = (id, type, datetime.datetime.now().replace(microsecond=0))
         self.cursor.execute(sql, val)
         self.database.commit()
 
@@ -22,6 +30,7 @@ class DatabaseConnector:
             "CREATE TABLE crypto_order ("
             "id int AUTO_INCREMENT PRIMARY KEY,"
             "trade_strategy int, "  # Strategy Id
+            "run_id int, "  # Run Id
             "production varchar(255), "  # True / False
             "order_type varchar(255), "  # Sell / Buy
             "main_currency varchar(255), "
@@ -30,7 +39,18 @@ class DatabaseConnector:
             "date varchar(255))"
         )
 
+    def setup_run_table(self):
+        self.cursor.execute(
+            "CREATE TABLE runs ("
+            "id int,"
+            "type varchar(255), "
+            "date varchar(255))"
+        )
+
 
 connector = DatabaseConnector()
+#Insert finished run
+#connector.insert_run(1, "FINISHED")
+connector.setup_tables()
 connector.insert_order(1, "BUY", "BTC", "USDT", "8112.206", "2019", False)
 
