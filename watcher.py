@@ -7,14 +7,17 @@ from strategies.strategy_one import StrategyOne
 
 class Watcher:
 
-    def __init__(self, main_currency, second_currency, minute_interval, binance_api, strategy_id, production=False):
+    def __init__(self, main_currency, second_currency, minute_interval, binance_api, database_connector, strategy_id, run_id,
+                 strategy, production=False):
         self.main_currency = main_currency
         self.second_currency = second_currency
         self.minute_interval = minute_interval
         self.binance_api = binance_api
+        self.database_connector = database_connector
         self.strategy_id = strategy_id
-        self.order_handler = OrderHandler(self.main_currency, self.second_currency, binance_api)
-        self.strategy = StrategyOne(self.main_currency, self.second_currency)
+        self.run_id = run_id
+        self.order_handler = OrderHandler(self.main_currency, self.second_currency, binance_api, strategy_id, run_id)
+        self.strategy = strategy
         self.production = production
 
     def start(self):
@@ -30,6 +33,3 @@ class Watcher:
             print("Points", result)
             print(datetime.datetime.now().replace(microsecond=0))
             time.sleep(self.minute_interval * 60)
-
-
-

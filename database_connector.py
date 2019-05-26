@@ -13,9 +13,9 @@ class DatabaseConnector:
             password='1234')
         self.cursor = self.database.cursor()
 
-    def insert_order(self, strategy_id, order_type, main_currency, second_currency, price, date, prod=False):
+    def insert_order(self, strategy_id, run_id, order_type, main_currency, second_currency, price, date, prod=False):
         sql = "INSERT INTO crypto_order (trade_strategy, run_id, production, order_type, main_currency, second_currency, price, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-        val = (strategy_id, 1, prod, order_type, main_currency, second_currency, price, date)
+        val = (strategy_id, run_id, prod, order_type, main_currency, second_currency, price, date)
         self.cursor.execute(sql, val)
         self.database.commit()
 
@@ -47,10 +47,7 @@ class DatabaseConnector:
             "date varchar(255))"
         )
 
-
-connector = DatabaseConnector()
-#Insert finished run
-#connector.insert_run(1, "FINISHED")
-connector.setup_tables()
-connector.insert_order(1, "BUY", "BTC", "USDT", "8112.206", "2019", False)
-
+    def get_last_run(self):
+        sql = "select *from runs ORDER BY Id DESC LIMIT 1"
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
