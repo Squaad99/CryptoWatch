@@ -7,9 +7,9 @@ class DatabaseConnector:
 
     def __init__(self):
         self.database = mysql.connector.connect(
-            host='localhost',
+            host='35.228.9.187',
             database='crypto_watch_db',
-            user='root',
+            user='henrik',
             password='1234')
         self.cursor = self.database.cursor()
 

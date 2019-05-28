@@ -29,6 +29,7 @@ class OrderHandler:
                 if production:
                     print("Buy real")
                 else:
+                    self.own_main = True
                     self.database_connector.insert_order(self.strategy_id, self.run_id, "BUY", self.main_currency,
                                                          self.second_currency,
                                                          self.binance_api.get_latest_price(
@@ -44,6 +45,7 @@ class OrderHandler:
                 if production:
                     print("Sell real")
                 else:
+                    self.own_main = False
                     self.database_connector.insert_order(self.strategy_id, self.run_id, "SELL", self.main_currency,
                                                          self.second_currency,
                                                          self.binance_api.get_latest_price(
