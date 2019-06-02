@@ -1,29 +1,18 @@
 import datetime
 
-from binance_24h_1h_candles import Binance24h1hHandler
-from binance_api import BinanceApi
+from calculator import Calculator
 
 
-class Criterias:
+class Criterias24h1hCandles:
 
-    def __init__(self, main_currency, second_currency):
+    def __init__(self, main_currency, second_currency, handler):
         self.main_currency = main_currency
         self.second_currency = second_currency
-        self.binance_api = BinanceApi()
+        self.handler = handler
         self.candles_24h_1h = []
-        self.binance_24h_1h_handler = Binance24h1hHandler()
+        self.binance_24h_1h_handler = handler
         self.time_now = datetime.datetime.now()
-
-    def set_data(self):
-        pair = self.main_currency + self.second_currency
-        print(pair)
-        self.candles_24h_1h = self.binance_api.get_24h_1h_candle(pair)
-        self.binance_24h_1h_handler.set_data(self.candles_24h_1h)
-        if not self.binance_24h_1h_handler.verify_data():
-            print("Data not valid for: " + pair)
-            return
-        self.time_now = datetime.datetime.now()
-        print("Data set: " + pair)
+        self.calculator = Calculator()
 
     def criteria_1_1(self):
         # Last candle is positive +2/-2 or +1/-1 for first half hour
@@ -75,3 +64,14 @@ class Criterias:
             return 2
         return -2
 
+    def criteria_5_1(self):
+        # Market depth in BTC highest divided by 20 1-5
+        bid_percentage, ask_percentage = self.calculator.percentage_of_two_values(self.binance_24h_1h_handler.total_bids, self.binance_24h_1h_handler.total_asks)
+        # More seller
+        if bid_percentage < ask_percentage:
+            print("More sellers")
+            return -ask_percentage / 20
+        # More buyers
+        elif bid_percentage > ask_percentage:
+            print("More Buyers")
+            return bid_percentage / 20

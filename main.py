@@ -1,15 +1,13 @@
 import time
 
-from binance_api import BinanceApi
-from database_connector import DatabaseConnector
-from strategies.strategy_one import StrategyOne
-from strategies.strategy_two import StrategyTwo
-from watcher import Watcher
 from queue import Queue
 import threading
 
+from database.database_connector import DatabaseConnector
+from strategies.strategy_template import StrategyTemplate
+from watcher import Watcher
+
 watcher_list = []
-binance_api = BinanceApi()
 database_connector = DatabaseConnector()
 
 last_run_dict = database_connector.get_last_run()
@@ -17,16 +15,16 @@ run_id = (last_run_dict[0][0] + 1)
 database_connector.insert_run(run_id, "Start")
 
 
+# Template
+# watcher_list.append(Watcher(StrategyTemplate("BTC", "USDT"), 2, 3, run_id))
 def setup_watchers():
-    watcher_list.append(Watcher("BTC", "USDT", 5, binance_api, database_connector, 1, run_id, StrategyOne("BTC", "USDT")))
-    watcher_list.append(Watcher("BTC", "USDT", 3, binance_api, database_connector, 2, run_id, StrategyTwo("BTC", "USDT", binance_api)))
+    print("dd")
 
 
 index = -1
 
 
 def start_watchers():
-
     def watch_thread():
         global index
         index += 1

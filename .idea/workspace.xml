@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09bb222e-ac1d-4259-99da-fbc69b3a7968" name="Default Changelist" comment="" />
+    <list default="true" id="09bb222e-ac1d-4259-99da-fbc69b3a7968" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_24h_1h_candles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_candle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/criterias.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_connector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategies/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategies/strategy_one.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategies/strategy_two.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thread_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watcher.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,71 +58,36 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1113433322">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="28" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="28" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/binance_24h_1h_candles.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1558297519623" expanded="true" signature="576:1495" ph="..." />
-                <marker date="1558297519623" expanded="true" signature="3202:3355" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/binance_api.py">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-              <folding>
-                <marker date="1558303142486" expanded="true" signature="53:54" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/watcher.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1558302931007" expanded="true" signature="1178:1179" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/order_handler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <marker date="1558303096294" expanded="true" signature="37:38" ph="..." />
-                <marker date="1558303096294" expanded="true" signature="37:43" ph="..." />
-                <marker date="1558303096294" expanded="true" signature="555:560" ph="..." />
-                <marker date="1558303096294" expanded="true" signature="845:851" ph="..." />
-              </folding>
+            <state>
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -128,6 +110,9 @@
       <find>time</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -139,6 +124,7 @@
         <option value="$PROJECT_DIR$/watcher.py" />
         <option value="$PROJECT_DIR$/order_handler.py" />
         <option value="$PROJECT_DIR$/binance_api.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -159,7 +145,7 @@
           <expand>
             <path>
               <item name="BtcWatchBinance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BtcWatch" type="462c0819:PsiDirectoryNode" />
+              <item name="CryptoWatch" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,8 +169,29 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CryptoWatch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="binance_24h_1h_candles" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BtcWatchBinance" />
+      <module name="CryptoWatch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -205,7 +212,7 @@
       <method v="2" />
     </configuration>
     <configuration name="binance_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BtcWatchBinance" />
+      <module name="CryptoWatch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -226,7 +233,7 @@
       <method v="2" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BtcWatchBinance" />
+      <module name="CryptoWatch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -247,7 +254,7 @@
       <method v="2" />
     </configuration>
     <configuration name="order_handler" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BtcWatchBinance" />
+      <module name="CryptoWatch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -268,7 +275,7 @@
       <method v="2" />
     </configuration>
     <configuration name="strategy_one" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BtcWatchBinance" />
+      <module name="CryptoWatch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -286,6 +293,49 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="CryptoWatch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="CryptoWatch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="CryptoWatch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
@@ -322,7 +372,7 @@
     <frame x="1912" y="-2" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4934924" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4934924" visible="true" weight="0.2365648" />
       <window_info id="Structure" order="1" sideWeight="0.5065076" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -404,9 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding>
-            <marker date="1558135861996" expanded="true" signature="38:44" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -414,11 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1558297519623" expanded="true" signature="576:1495" ph="..." />
-            <marker date="1558297519623" expanded="true" signature="3202:3355" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -426,9 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -436,10 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1558302931007" expanded="true" signature="1178:1179" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -447,12 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="31" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <marker date="1558303096294" expanded="true" signature="37:38" ph="..." />
-            <marker date="1558303096294" expanded="true" signature="37:43" ph="..." />
-            <marker date="1558303096294" expanded="true" signature="555:560" ph="..." />
-            <marker date="1558303096294" expanded="true" signature="845:851" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -460,16 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#515#928#0" />
-            <element signature="e#966#1315#0" />
-            <element signature="e#1353#1515#0" />
-            <element signature="e#1555#1874#0" />
-            <element signature="e#1913#2065#0" />
-            <element signature="e#2104#2359#0" />
-            <marker date="1558302882442" expanded="true" signature="2356:2361" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -477,9 +496,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <marker date="1558303142486" expanded="true" signature="53:54" ph="..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>

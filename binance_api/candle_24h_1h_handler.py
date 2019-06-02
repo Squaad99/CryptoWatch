@@ -2,13 +2,14 @@ import datetime
 
 import numpy as np
 
-from binance_candle import BinanceCandle
+from binance_api.objects.candle import BinanceCandle
 
 
-class Binance24h1hHandler:
+class Candle24h1hHandler:
 
-    def __init__(self):
+    def __init__(self, binance_api):
         self.candle_list = []
+        self.market_depth = 0
         self.low_price = 0
         self.high_price = 0
         self.last_price = 0
@@ -20,11 +21,15 @@ class Binance24h1hHandler:
         self.last_candle_length = 0
         self.last_candle_trades = 0
         self.last_candle_change = 0
+        self.total_bids = 0.0
+        self.total_asks = 0.0
+        self.binance_api = binance_api
 
-    def set_data(self, candle_list):
+    def set_data(self, candle_list, market_depth):
         for candle in candle_list:
             self.candle_list.append(BinanceCandle(candle[0], candle[1], candle[2], candle[3], candle[4], candle[5],
                                                   candle[6], candle[7], candle[8]))
+        self.market_depth = market_depth
         self.low_price = self.get_low_price()
         self.high_price = self.get_high_price()
         self.last_price = self.get_last_price()
@@ -36,6 +41,7 @@ class Binance24h1hHandler:
         self.last_candle_length = round(datetime.datetime.now().minute / 60, 2)
         self.last_candle_trades = self.candle_list[len(self.candle_list) - 1].trades
         self.last_candle_change = self.get_last_candle_change()
+        self.total_bids, self.total_asks = self.get_total_bids_asks()
 
     def verify_data(self):
         now = datetime.datetime.now()
@@ -126,3 +132,15 @@ class Binance24h1hHandler:
     def get_last_candle_change(self):
         last_candle = self.candle_list[len(self.candle_list)-1]
         return round((float(last_candle.close_price) / float(last_candle.open_price) - 1) * 100, 2)
+
+    def get_total_bids_asks(self):
+        total_bids = 0.0
+        for asks in self.market_depth['bids']:
+            total_bids += float(asks[1])
+        total_asks = 0.0
+        for asks in self.market_depth['asks']:
+            total_asks += float(asks[1])
+        return total_bids, total_asks
+
+
+

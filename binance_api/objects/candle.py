@@ -19,3 +19,4 @@ class BinanceCandle:
         if self.open_price < self.close_price:
             return True
         return False
+
