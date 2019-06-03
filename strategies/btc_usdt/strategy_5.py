@@ -2,14 +2,14 @@ from binance_api.candle_24h_1h_handler import Candle24h1hHandler
 from criterias.candles_24h_1h import Criterias24h1hCandles
 
 
-class StrategyTemplate:
+class StrategyFive:
 
     def __init__(self, main_currency, second_currency):
         self.main_currency = main_currency
         self.second_currency = second_currency
         self.pair = self.main_currency + self.second_currency
-        self.buy_target = 0
-        self.sell_target = 0
+        self.buy_target = 3
+        self.sell_target = -3
 
     def setup(self, binance_api):
         self.binance_api = binance_api
@@ -24,4 +24,12 @@ class StrategyTemplate:
 
     def evaluate_criterias(self):
         # Return True(Buy) / False(Sell) / None Skip
+        result_list = []
+        result_list.append(self.criterias.criteria_1_2())  # 2 / 2
+        result_list.append(self.criterias.criteria_4_2())  # 2 / 2
+        result = sum(result_list)
+        if result >= self.buy_target:
+            return True
+        elif result <= self.sell_target:
+            return False
         return None

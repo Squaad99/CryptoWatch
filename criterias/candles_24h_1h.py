@@ -69,9 +69,7 @@ class Criterias24h1hCandles:
         bid_percentage, ask_percentage = self.calculator.percentage_of_two_values(self.binance_24h_1h_handler.total_bids, self.binance_24h_1h_handler.total_asks)
         # More seller
         if bid_percentage < ask_percentage:
-            print("More sellers")
             return -ask_percentage / 20
         # More buyers
         elif bid_percentage > ask_percentage:
-            print("More Buyers")
             return bid_percentage / 20

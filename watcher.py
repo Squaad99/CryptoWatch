@@ -23,7 +23,6 @@ class Watcher:
     def start(self):
         print("Starting watcher for:", self.strategy.main_currency, self.strategy.second_currency,
               datetime.datetime.now().replace(microsecond=0))
-        self.strategy.set_data()
         while True:
             self.strategy.set_data()
             result = self.strategy.evaluate_criterias()

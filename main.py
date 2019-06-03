@@ -4,7 +4,11 @@ from queue import Queue
 import threading
 
 from database.database_connector import DatabaseConnector
-from strategies.strategy_template import StrategyTemplate
+from strategies.btc_usdt.strategy_1 import StrategyOne
+from strategies.btc_usdt.strategy_2 import StrategyTwo
+from strategies.btc_usdt.strategy_3 import StrategyThree
+from strategies.btc_usdt.strategy_4 import StrategyFour
+from strategies.btc_usdt.strategy_5 import StrategyFive
 from watcher import Watcher
 
 watcher_list = []
@@ -17,9 +21,14 @@ database_connector.insert_run(run_id, "Start")
 
 # Template
 # watcher_list.append(Watcher(StrategyTemplate("BTC", "USDT"), 2, 3, run_id))
-def setup_watchers():
-    print("dd")
 
+
+def setup_watchers():
+    watcher_list.append(Watcher(StrategyOne("BTC", "USDT"), 5, 1, run_id))
+    watcher_list.append(Watcher(StrategyTwo("BTC", "USDT"), 5, 2, run_id))
+    watcher_list.append(Watcher(StrategyThree("BTC", "USDT"), 5, 3, run_id))
+    watcher_list.append(Watcher(StrategyFour("BTC", "USDT"), 5, 4, run_id))
+    watcher_list.append(Watcher(StrategyFive("BTC", "USDT"), 5, 5, run_id))
 
 index = -1
 

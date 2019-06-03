@@ -7,9 +7,9 @@ class DatabaseConnector:
 
     def __init__(self):
         self.database = mysql.connector.connect(
-            host='localhost',
+            host='35.228.9.187',
             database='crypto_watch_db',
-            user='root',
+            user='henrik',
             password='1234')
         self.cursor = self.database.cursor()
 
@@ -52,8 +52,12 @@ class DatabaseConnector:
         self.cursor.execute(sql)
         return self.cursor.fetchall()
 
+    def get_all_runs(self):
+        sql = "select * from runs"
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
     def get_order_history(self):
         sql = "select * from crypto_order"
         self.cursor.execute(sql)
         return self.cursor.fetchall()
-
