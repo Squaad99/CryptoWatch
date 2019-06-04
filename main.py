@@ -46,7 +46,7 @@ def start_watchers():
         t = threading.Thread(target=watch_thread)
         t.daemon = True
         t.start()
-        time.sleep(1)
+        time.sleep(15)
 
     for worker in range(len(watcher_list)):
         q.put(worker)
