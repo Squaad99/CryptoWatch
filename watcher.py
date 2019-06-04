@@ -28,8 +28,8 @@ class Watcher:
             result = self.strategy.evaluate_criterias()
 
             if result:
-                self.order_handler.buy(self.production)
+                self.order_handler.buy()
             elif result:
-                self.order_handler.sell(self.production)
+                self.order_handler.sell()
 
             time.sleep(self.minute_interval * 60)
