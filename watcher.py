@@ -16,7 +16,6 @@ class Watcher:
         self.binance_api = BinanceApi()
         self.database_connector = DatabaseConnector()
         self.production = production
-        self.strategy.setup(self.binance_api)
         self.order_handler = OrderHandler(self.strategy.main_currency, self.strategy.second_currency, strategy_id,
                                           run_id, self.production, self.binance_api, self.database_connector)
         self.strategy.setup(self.binance_api, self.order_handler)
