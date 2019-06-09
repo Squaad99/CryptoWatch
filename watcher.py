@@ -19,6 +19,7 @@ class Watcher:
         self.strategy.setup(self.binance_api)
         self.order_handler = OrderHandler(self.strategy.main_currency, self.strategy.second_currency, strategy_id,
                                           run_id, self.production, self.binance_api, self.database_connector)
+        self.strategy.setup(self.binance_api, self.order_handler)
 
     def start(self):
         print("Starting watcher for:", self.strategy.main_currency, self.strategy.second_currency,
@@ -29,7 +30,7 @@ class Watcher:
 
             if result:
                 self.order_handler.buy()
-            elif result:
+            elif not result:
                 self.order_handler.sell()
 
             time.sleep(self.minute_interval * 60)

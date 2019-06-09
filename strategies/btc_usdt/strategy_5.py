@@ -11,10 +11,11 @@ class StrategyFive:
         self.buy_target = 3
         self.sell_target = -3
 
-    def setup(self, binance_api):
+    def setup(self, binance_api, order_handler):
         self.binance_api = binance_api
         self.handler = Candle24h1hHandler(self.binance_api)
         self.criterias = Criterias24h1hCandles(self.main_currency, self.second_currency, self.handler)
+        self.order_handler = order_handler
 
     def set_data(self):
         self.handler.set_data(self.binance_api.get_24h_1h_candle(self.pair), self.binance_api.get_market_depth(self.pair))

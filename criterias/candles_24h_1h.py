@@ -44,6 +44,19 @@ class Criterias24h1hCandles:
         elif 80 <= index <= 100:
             return -2
 
+    def criteria_2_2(self):
+        # Low High index 0-10 4, 10-40 3 40-70 2, 70-100 1 //  Last 5 hours
+        index = self.binance_24h_1h_handler.low_high_index
+        if 0 <= index <= 20:
+            return 2
+        elif 20 <= index <= 50:
+            return 1
+        elif 50 <= index <= 80:
+            return -1
+        elif 80 <= index <= 100:
+            return -2
+
+
     def criteria_3(self):
         # 24h period change +2/-2
         if self.binance_24h_1h_handler.get_period_change() > 0:
